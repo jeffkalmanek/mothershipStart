@@ -1,4 +1,5 @@
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -17,7 +18,7 @@ public class DriverFactory {
         this.app = app;
         this.serverUrl = serverUrl;
     }
-    public AppiumDriver getDriver() {
+    public AppiumDriver<MobileElement> getDriver() {
         DesiredCapabilities dCaps = new DesiredCapabilities();
         dCaps.setCapability("app", app);
 
@@ -27,13 +28,13 @@ public class DriverFactory {
             dCaps.setCapability("deviceName", "Samsung S9");
             dCaps.setCapability("automationName", "UiAutomator2");
             dCaps.setCapability("udid", "5242525a44553398");
-            return new AndroidDriver(serverUrl, dCaps);
+            return new AndroidDriver<MobileElement>(serverUrl, dCaps);
         } else {
             dCaps.setCapability("platformName", "iOS");
             dCaps.setCapability("platformVersion", "13.4");
             dCaps.setCapability("deviceName", "iPhone 11");
             dCaps.setCapability("automationName", "XCUITest");
-            return new IOSDriver(serverUrl, dCaps);
+            return new IOSDriver<MobileElement>(serverUrl, dCaps);
         }
     }
 }

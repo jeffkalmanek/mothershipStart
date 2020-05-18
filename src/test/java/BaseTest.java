@@ -1,4 +1,5 @@
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import org.junit.After;
 import org.junit.Assert;
@@ -17,9 +18,9 @@ import java.nio.file.Paths;
 
 public abstract class BaseTest {
 
-    private AppiumDriver driver;
+    private AppiumDriver<MobileElement> driver;
     private PlatformType platform;
-    private final String appiumUrl = "http://127.0.0.1:4723/wd/hub";
+    private final String appiumUrl = "http://localhost:4723/wd/hub";
 
     protected MainView mainView;
     protected LoginView loginView;

@@ -21,6 +21,7 @@ public class LoggedInView {
      */
 //    private final String loggedInMsgLoc = "//XCUIElementTypeOther[contains(@name, 'You are logged in as')]";
     @iOSFindBy(xpath = "//XCUIElementTypeOther[contains(@name, 'You are logged in as')]")
+    // change this AndroidOS element
     @AndroidFindBy(xpath = "//XCUIElementTypeOther[contains(@name, 'You are logged in as')]")
     private WebElement loggedInMsg;
 
